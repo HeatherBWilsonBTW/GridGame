@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="GridGame/GridGame.vcxproj" />
+  <Project Path="GridGame/GridGame.vcxproj" Id="605a3b6c-796c-4890-96be-0db696e2eba3" />
 </Solution>
