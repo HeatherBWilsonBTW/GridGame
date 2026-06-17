@@ -41,6 +41,38 @@ int main()
 			playerX += 5;
 		}
 
+
+		// set up boundaries
+		
+		//if player goes too far up
+		if (playerY < 20)
+		{
+			// set player back to top limit
+			playerY = 20;
+		}
+
+		//if player goes too far down
+		if (playerY > 580)
+		{
+			// set player back to bottom limit
+			playerY = 580;
+		}
+
+		//if player goes too far left
+		if (playerX < 20)
+		{
+			// set player back to the left limit
+			playerX = 20;
+		}    
+		
+		// if plyaer goes too far right
+		if (playerX > 780)
+		{
+			// set player back to the right limit
+			playerX = 780;
+		}
+
+
 		BeginDrawing();
 		ClearBackground(BLACK);
 		DrawTriangle(
