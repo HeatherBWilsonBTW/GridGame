@@ -63,10 +63,13 @@ void Player::Update()
 
 void Player::Draw() const
 {
-	DrawTriangle(
-	{ (float)playerX, (float)playerY - 20 },
-	{ (float)playerX - 20, (float)playerY + 20 },
-	{ (float)playerX + 20, (float)playerY + 20 },
-		BLUE
-);
+	DrawTriangle({ (float)playerX, (float)playerY - 40 }, { (float)playerX - 19, (float)playerY + 18 },
+	{ (float)playerX + 19, (float)playerY + 18 }, BLUE);
+	
+
+	//cockpit
+	DrawCircle(playerX, playerY - 5, 6, ORANGE);
+	// rectagle body
+	DrawRectangle(playerX - 18, playerY + 10, 36, 24, BLUE);
+
 }

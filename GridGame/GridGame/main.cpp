@@ -1,7 +1,7 @@
 #include <iostream>
 #include "raylib.h"
 #include <string>
-
+#include "Player.h"
 
 int main()
 {
@@ -15,6 +15,11 @@ int main()
 	int playerX = 400;
 	int playerY = 300;
 	
+	Player player;
+
+	//variable for score
+	int score = 0;
+
 	while (!WindowShouldClose())
 	{
 		// input movement
@@ -40,7 +45,7 @@ int main()
 		{
 			playerX += 5;
 		}
-
+		
 
 		// set up boundaries
 		
@@ -71,16 +76,13 @@ int main()
 			// set player back to the right limit
 			playerX = 780;
 		}
-
+		player.Update();
 
 		BeginDrawing();
 		ClearBackground(BLACK);
-		DrawTriangle(
-			{ (float)playerX, (float)playerY - 20 },
-			{ (float)playerX - 20, (float)playerY + 20 },
-			{ (float)playerX + 20, (float)playerY + 20 },
-			BLUE
-		);
+		player.Draw();
+		std::string scoreText = "Score: " + std::to_string(score);
+		DrawText(scoreText.c_str(), 20, 20, 30, WHITE);
 		EndDrawing();
 	}
 	// close window
